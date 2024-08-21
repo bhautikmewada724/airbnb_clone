@@ -12,7 +12,6 @@ const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-
 const ExpressError = require("./utils/ExpressError.js");
 const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
@@ -102,7 +101,6 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { statusCode, message });
 });
 
-// Start server
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
